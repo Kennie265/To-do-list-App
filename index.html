@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="date-section">
+                <h1>Today</h1>
+                <p id="taskCount">0 tasks today</p>
+            </div>
+            <button class="add-new-btn" onclick="openModal()">Add New</button>
+        </div>
+
+        <div class="calendar-strip" id="calendarStrip">
+            <!-- Calendar will be populated by JavaScript -->
+        </div>
+
+        <ul class="task-list" id="taskList">
+            <!-- Tasks will be populated by JavaScript -->
+        </ul>
+    </div>
+
+    <div class="modal" id="taskModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Choose activity</h2>
+                <button onclick="closeModal()" style="background: none; border: none; font-size: 20px; cursor: pointer;">×</button>
+            </div>
+            <div class="activity-list">
+                <div class="activity-item" onclick="showTaskForm('Idea', '💡')">
+                    <div class="activity-icon">💡</div>
+                    <div class="activity-text">Idea</div>
+                    <div class="activity-arrow">›</div>
+                </div>
+                <div class="activity-item" onclick="showTaskForm('Food', '🍴')">
+                    <div class="activity-icon">🍴</div>
+                    <div class="activity-text">Food</div>
+                    <div class="activity-arrow">›</div>
+                </div>
+                <div class="activity-item" onclick="showTaskForm('Work', '💼')">
+                    <div class="activity-icon">💼</div>
+                    <div class="activity-text">School</div>
+                    <div class="activity-arrow">›</div>
+                </div>
+                <div class="activity-item" onclick="showTaskForm('Sport', '🏃')">
+                    <div class="activity-icon">🏃</div>
+                    <div class="activity-text">Sport</div>
+                    <div class="activity-arrow">›</div>
+                </div>
+                <div class="activity-item" onclick="showTaskForm('Music', '🎵')">
+                    <div class="activity-icon">🎵</div>
+                    <div class="activity-text">Music</div>
+                    <div class="activity-arrow">›</div>
+                </div>
+            </div>
+
+            <div class="task-form" id="taskForm">
+                <div class="form-group">
+                    <label for="taskTitle">Task Title</label>
+                    <input type="text" id="taskTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskTime">Time</label>
+                    <input type="time" id="taskTime" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskDuration">Duration (minutes)</label>
+                    <input type="number" id="taskDuration" min="15" step="15" value="30" required>
+                </div>
+                <button class="add-new-btn" onclick="createTask()" style="width: 100%;">Create Task</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="floating-add-btn" onclick="openModal()">+</button> 
+    
+     <!-- JavaScript connection -->
+    <script src="script.js"></script>
+       
+  
+</body>
+</html>
